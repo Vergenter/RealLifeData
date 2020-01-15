@@ -9,9 +9,13 @@
     "snabbdom": "^0.7.4",
     "union-type": "^0.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "build": "browserify main/view.js --outfile outView.js && browserify main/creator.js --outfile outCreator.js && browserify main/adder.js --outfile outAdder.js"
   },
   "author": "Verg",
   "license": "MIT",
