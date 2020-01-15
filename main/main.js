@@ -1,16 +1,12 @@
-/* jshint esnext: true */
-const R = require('ramda');
-const Type = require('union-type');
 const patch = require('snabbdom').init([
   require('snabbdom/modules/class').default,
   require('snabbdom/modules/props').default,
   require('snabbdom/modules/eventlisteners').default,
   require('snabbdom/modules/style').default,
 ]);
-const h = require('snabbdom/h').default;
 
 const init= (component)=>{
-const main = (oldState, oldVnode, view, update) => {
+  const main = (oldState, oldVnode, view, update) => {
     const newVnode = view((action) => {
       const newState = update(oldState,action);
       main(newState, newVnode, view, update);
@@ -23,5 +19,5 @@ const main = (oldState, oldVnode, view, update) => {
     const vnode = document.getElementById('container');
     main(component.init(), vnode, component.view, component.update);
   });
-}
-module.exports={init}
+};
+module.exports={init};
