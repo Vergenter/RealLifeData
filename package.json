@@ -4,18 +4,24 @@
   "main": "index.html",
   "dependencies": {
     "browserify": "^16.5.0",
+    "fluture": "^12.1.1",
+    "folktale": "^2.3.2",
+    "jwt-decode": "^2.2.0",
     "ramda": "^0.26.1",
     "snabbdom": "^0.7.4",
+    "unfetch": "^4.1.0",
     "union-type": "^0.4.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
-    "mocha": "^7.0.0"
+    "mocha": "^7.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "scripts": {
     "test": "mocha",
-    "build": "browserify main/view.js --outfile outView.js && browserify main/creator.js --outfile outCreator.js && browserify main/adder.js --outfile outAdder.js"
+    "build": "npx webpack"
   },
   "author": "Verg",
   "license": "MIT",
