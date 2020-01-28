@@ -1,11 +1,10 @@
 
-import { curry,assoc,compose,identity,prop,tap} from 'ramda';
+import { curry,assoc,compose,identity,prop} from 'ramda';
 import Type from 'union-type';
 import {URLToRoute} from './parser';
 import {routeToComponent} from './routeToComponent';
 
 let test=()=>{};
-function callingMethod(event){test(event);} //mutable state :(
 window.addEventListener('hashchange',(event)=>test(event));
 const URLToModel = compose(
   (component)=>({
